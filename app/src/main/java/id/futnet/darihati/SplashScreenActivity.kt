@@ -14,6 +14,7 @@ class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
+        supportActionBar?.hide()
         preferencesHelper= PreferencesHelper(this)
         Handler().postDelayed({
             if (preferencesHelper.login){
@@ -21,6 +22,7 @@ class SplashScreenActivity : AppCompatActivity() {
             }else{
                 startActivity<LoginActivity>()
             }
+            finish()
         },2000)
     }
 }

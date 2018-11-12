@@ -31,7 +31,7 @@ class ApiClient{
                             RxJavaCallAdapterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())
                     .client(okHttpClient.build())
-                    .baseUrl("http://192.168.43.33:8000/api/member/")
+                    .baseUrl("http://192.168.137.1:8000/api/member/")
                     .build()
 
             return retrofit.create(ApiService::class.java)

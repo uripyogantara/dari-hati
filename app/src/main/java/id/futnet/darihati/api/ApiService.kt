@@ -1,5 +1,6 @@
 package id.futnet.darihati.api
 
+import id.futnet.darihati.model.Event
 import id.futnet.darihati.model.Student
 import id.futnet.darihati.model.User
 import retrofit2.http.Field
@@ -15,4 +16,7 @@ interface ApiService {
 
     @GET("student")
     fun allStudent():Observable<List<Student>>
+
+    @GET("event")
+    fun allEvent():Observable<List<Event>>
 }
