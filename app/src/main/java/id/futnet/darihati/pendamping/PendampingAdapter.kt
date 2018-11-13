@@ -22,7 +22,7 @@ class PendampingAdapter(val context:Context?, val clickListener: () -> Unit) : R
         holder.bind(clickListener)
     }
 
-    class ViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(listener: () -> Unit){
             itemView.setOnClickListener({
                 listener()

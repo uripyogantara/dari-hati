@@ -8,11 +8,11 @@ import android.view.ViewGroup
 import id.futnet.darihati.R
 import id.futnet.darihati.model.Student
 import kotlinx.android.extensions.LayoutContainer
-import kotlinx.android.synthetic.main.list_student.view.*
+import kotlinx.android.synthetic.main.list_community.view.*
 
-class StudentAdapter(val context:Context?,val students:List<Student>, val clickListener: () -> Unit) : RecyclerView.Adapter<StudentAdapter.ViewHolder>() {
+class CommunityAdapter(val context:Context?, val students:List<Student>, val clickListener: () -> Unit) : RecyclerView.Adapter<CommunityAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view=LayoutInflater.from(context).inflate(R.layout.list_student,parent,false)
+        val view=LayoutInflater.from(context).inflate(R.layout.list_community,parent,false)
         return ViewHolder(view)
     }
 

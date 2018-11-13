@@ -5,5 +5,6 @@
     <color name="colorAccent">#eb797c</color>
     <color name="colorDivider">#d1d1d1</color>
     <color name="colorWhite">#fefefe</color>
-    <color name="colorGrey">#D3D3D3</color>
+    <color name="colorGrey">#ababab</color>
+    <color name="colorBackground">#f7f7f7</color>
 </resources>

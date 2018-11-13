@@ -9,10 +9,6 @@
         android:title="Cerita"
         android:icon="@drawable/ic_news"/>
     <item
-        android:id="@+id/menu_event"
-        android:title="Event"
-        android:icon="@drawable/ic_event"/>
-    <item
         android:id="@+id/menu_profil"
         android:title="Profil"
         android:icon="@drawable/ic_profil"/>

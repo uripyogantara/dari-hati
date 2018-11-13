@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import id.futnet.darihati.R
-import kotlinx.android.synthetic.main.fragment_adik_asuh.*
+import kotlinx.android.synthetic.main.fragment_home.*
 import id.futnet.darihati.detail.DetailActivity
 import kotlinx.android.synthetic.main.fragment_pendamping.*
 import org.jetbrains.anko.support.v4.toast

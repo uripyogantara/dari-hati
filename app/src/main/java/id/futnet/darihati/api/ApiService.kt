@@ -15,7 +15,7 @@ interface ApiService {
     fun login(@Field("email") email:String,@Field("password") password:String):Observable<User>
 
     @GET("student")
-    fun allStudent():Observable<List<Student>>
+    fun allStudent():Observable<MutableList<Student>>
 
     @GET("event")
     fun allEvent():Observable<List<Event>>

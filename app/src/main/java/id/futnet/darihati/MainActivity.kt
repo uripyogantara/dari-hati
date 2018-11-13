@@ -22,10 +22,10 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
                 setTitle("Cerita")
                 loadFragment(NewsFragment())
             }
-            R.id.menu_event->{
-                setTitle("Event")
-                loadFragment(EventFragment())
-            }
+//            R.id.menu_event->{
+//                setTitle("Event")
+//                loadFragment(EventFragment())
+//            }
 
             R.id.menu_profil->{
                 setTitle("Profil")
@@ -45,8 +45,8 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         bnv.enableItemShiftingMode(false)
 
         bnv.setOnNavigationItemSelectedListener(this)
-        bnv.setIconSize(32F, 32F)
-        bnv.setTextSize(0F)
+        bnv.setIconSize(26F, 26F)
+//        bnv.setTextSize(12F)
     }
 
     private fun loadFragment(fragment: Fragment) {

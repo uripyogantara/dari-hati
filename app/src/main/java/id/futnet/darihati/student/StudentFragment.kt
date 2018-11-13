@@ -8,38 +8,48 @@ import android.view.View
 import android.view.ViewGroup
 import id.futnet.darihati.R
 import id.futnet.darihati.api.ApiService
-import kotlinx.android.synthetic.main.fragment_adik_asuh.*
+import kotlinx.android.synthetic.main.fragment_home.*
 import id.futnet.darihati.detail.DetailActivity
 import id.futnet.darihati.model.Student
 import org.jetbrains.anko.support.v4.startActivity
-import id.futnet.darihati.api.ApiClient
-import org.jetbrains.anko.support.v4.ctx
-import id.futnet.darihati.student.StudentPresenter
 import org.jetbrains.anko.support.v4.toast
+import id.futnet.darihati.student.CommunityAdapter
 
 class StudentFragment : Fragment(), StudentView {
-    private lateinit var students:List<Student>
+    private lateinit var students:MutableList<Student>
+
     private lateinit var service: ApiService
     private lateinit var presenter: StudentPresenter
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_adik_asuh,container,false)
+        return inflater.inflate(R.layout.fragment_home,container,false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        rv_adik_asuh.layoutManager=LinearLayoutManager(context)
-
-        service= ApiClient.create(ctx)
-        presenter=StudentPresenter(service,this)
-        presenter.allStudent()
+        rv_adik_asuh.layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        rv_komunitas.layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+//        service= ApiClient.create(ctx)
+//        presenter=StudentPresenter(service,this)
+//        presenter.allStudent()
+        setStudentAdapater()
+        setCommunityAdapater()
     }
 
-    private fun setAdapater(){
+    private fun setStudentAdapater(){
+        students= mutableListOf()
         val adapter=StudentAdapter(context,students){
             startActivity<DetailActivity>()
         }
         rv_adik_asuh.adapter=adapter
+    }
+
+    private fun setCommunityAdapater(){
+        students= mutableListOf()
+        val adapter=CommunityAdapter(context,students){
+            startActivity<DetailActivity>()
+        }
+        rv_komunitas.adapter=adapter
     }
 
     override fun showLoading() {
@@ -50,9 +60,9 @@ class StudentFragment : Fragment(), StudentView {
         toast("hide")
     }
 
-    override fun onSuccess(students: List<Student>) {
+    override fun onSuccess(students: MutableList<Student>) {
         this.students=students
-        setAdapater()
+        setStudentAdapater()
         toast("sukses")
     }
 

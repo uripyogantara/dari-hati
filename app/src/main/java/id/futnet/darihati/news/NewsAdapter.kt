@@ -21,7 +21,7 @@ class NewsAdapter(val context:Context?) : RecyclerView.Adapter<NewsAdapter.ViewH
 
     }
 
-    class ViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
+    class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     }
 }
