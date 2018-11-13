@@ -38,11 +38,15 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setSupportActionBar(toolbar)
         loadFragment(StudentFragment())
-        bnv.enableAnimation(false);
-        bnv.enableShiftingMode(false);
-        bnv.enableItemShiftingMode(false);
+        bnv.enableAnimation(false)
+        bnv.enableShiftingMode(false)
+        bnv.enableItemShiftingMode(false)
+
         bnv.setOnNavigationItemSelectedListener(this)
+        bnv.setIconSize(32F, 32F)
+        bnv.setTextSize(0F)
     }
 
     private fun loadFragment(fragment: Fragment) {
