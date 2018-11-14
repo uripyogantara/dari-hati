@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/menu_asuh"
-        android:title="Adik Asuh"
-        android:icon="@drawable/ic_people"/>
+        android:id="@+id/menu_home"
+        android:title="Home"
+        android:icon="@drawable/ic_home"/>
     <item
         android:id="@+id/menu_news"
-        android:title="Cerita"
+        android:title="News"
         android:icon="@drawable/ic_news"/>
     <item
         android:id="@+id/menu_profil"

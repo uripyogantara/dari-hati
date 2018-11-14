@@ -5,21 +5,20 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.view.MenuItem
-import id.futnet.darihati.student.StudentFragment
-import id.futnet.darihati.event.EventFragment
-import id.futnet.darihati.news.NewsFragment
+import id.futnet.darihati.ui.home.StudentFragment
+import id.futnet.darihati.ui.news.NewsFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemSelectedListener {
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
-            R.id.menu_asuh->{
+            R.id.menu_home->{
                 setTitle("Dari Hati")
                 loadFragment(StudentFragment())
             }
 
             R.id.menu_news->{
-                setTitle("Cerita")
+                setTitle("News")
                 loadFragment(NewsFragment())
             }
 //            R.id.menu_event->{
@@ -41,8 +40,9 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         setSupportActionBar(toolbar)
         loadFragment(StudentFragment())
         bnv.enableAnimation(false)
-        bnv.enableShiftingMode(false)
-        bnv.enableItemShiftingMode(false)
+        bnv.setLabelVisibilityMode(1)
+        bnv.setItemHorizontalTranslationEnabled(false)
+//        bnv.enableItemShiftingMode(false);
 
         bnv.setOnNavigationItemSelectedListener(this)
         bnv.setIconSize(26F, 26F)
