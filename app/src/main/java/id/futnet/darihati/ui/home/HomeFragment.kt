@@ -17,8 +17,10 @@ import id.futnet.darihati.model.Funding
 import id.futnet.darihati.ui.community.CommunityActivity
 import id.futnet.darihati.ui.funding.FundingActivity
 import id.futnet.darihati.ui.student.StudentActivity
+import id.futnet.darihati.utils.gone
+import id.futnet.darihati.utils.invisible
+import id.futnet.darihati.utils.visible
 import io.reactivex.disposables.CompositeDisposable
-import kotlinx.android.synthetic.main.activity_funding.*
 import org.jetbrains.anko.support.v4.ctx
 import org.jetbrains.anko.support.v4.startActivity
 import org.jetbrains.anko.support.v4.toast
@@ -28,7 +30,6 @@ class HomeFragment : Fragment(), HomeView, View.OnClickListener {
 
     private lateinit var communities:MutableList<Community>
     private lateinit var fundings:MutableList<Funding>
-    private lateinit var mainGrid:GridLayout
 
     private lateinit var service: ApiService
     private lateinit var presenter: HomePresenter
@@ -40,17 +41,16 @@ class HomeFragment : Fragment(), HomeView, View.OnClickListener {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        mainGrid=main_grid
 
-        rv_adik_asuh.layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
+        rv_funding.layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
         rv_komunitas.layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
 
         service=ApiClient.create(ctx)
         presenter=HomePresenter(service,this)
-//        compositeDisposable?.add(presenter.community())
-        presenter.community()
-//        compositeDisposable?.add(presenter.funding())
-
+        val communityDisposable=presenter.community()
+        val fundingDisposable=presenter.funding()
+        compositeDisposable?.add(communityDisposable)
+        compositeDisposable?.add(fundingDisposable)
         menu_student.setOnClickListener(this)
         menu_community.setOnClickListener(this)
         menu_funding.setOnClickListener(this)
@@ -62,7 +62,7 @@ class HomeFragment : Fragment(), HomeView, View.OnClickListener {
         }
         rv_komunitas.adapter=adapter
     }
-    private fun setStudentAdapater(){
+    private fun setFundingAdapater(){
         val adapter=FundingAdapter(context,fundings ){
 //            startActivity<DetailActivity>()
         }
@@ -87,11 +87,12 @@ class HomeFragment : Fragment(), HomeView, View.OnClickListener {
     }
 
     override fun showLoading() {
-        toast("loading")
+//        toast("loading")
+        progres_community.visible()
     }
 
     override fun hideLoading() {
-        toast("hide")
+        progres_community.gone()
     }
 
     override fun onSuccess(communities: MutableList<Community>) {
@@ -104,18 +105,20 @@ class HomeFragment : Fragment(), HomeView, View.OnClickListener {
     }
 
     override fun showLoadingFunding() {
-
+        progres_funding.visible()
     }
 
     override fun hideLoadingFunding() {
-
+        progres_funding.gone()
     }
 
     override fun onSuccessFunding(fundings: MutableList<Funding>) {
-
+        this.fundings=fundings
+        setFundingAdapater()
+        toast("sukses funding")
     }
 
     override fun onErrorFunding(t: Throwable) {
-
+        toast("Error "+t)
     }
 }

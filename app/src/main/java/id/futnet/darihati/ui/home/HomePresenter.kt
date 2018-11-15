@@ -6,9 +6,9 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
 class HomePresenter(private val service: ApiService, private val view: HomeView) {
-    fun community(){
+    fun community():Disposable{
         view.showLoading()
-        service.limitCommunity()
+        return service.limitCommunity()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({ community->
@@ -27,10 +27,10 @@ class HomePresenter(private val service: ApiService, private val view: HomeView)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe({
-                    view.hideLoading()
+                    view.hideLoadingFunding()
                     view.onSuccessFunding(it)
                 },{
-                    view.hideLoading()
+                    view.hideLoadingFunding()
                     view.onErrorFunding(it)
                 })
         return disposable
