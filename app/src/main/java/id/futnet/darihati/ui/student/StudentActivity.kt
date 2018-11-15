@@ -66,4 +66,9 @@ class StudentActivity : AppCompatActivity(), StudentView {
     override fun onError(t: Throwable) {
         toast("Error : "+t)
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        compositeDisposable.clear()
+    }
 }

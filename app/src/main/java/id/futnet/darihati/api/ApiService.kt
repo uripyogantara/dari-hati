@@ -21,6 +21,9 @@ interface ApiService {
     @GET("community")
     fun allCommunity():Observable<MutableList<Community>>
 
+    @GET("funding")
+    fun allFunding():Observable<MutableList<Funding>>
+
     @GET("community/limit")
     fun limitCommunity():Observable<MutableList<Community>>
 

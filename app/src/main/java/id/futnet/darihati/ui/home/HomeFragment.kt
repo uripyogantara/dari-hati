@@ -33,7 +33,7 @@ class HomeFragment : Fragment(), HomeView, View.OnClickListener {
 
     private lateinit var service: ApiService
     private lateinit var presenter: HomePresenter
-    private var compositeDisposable: CompositeDisposable? = null
+    private lateinit var compositeDisposable: CompositeDisposable
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_home,container,false)
     }
@@ -120,5 +120,10 @@ class HomeFragment : Fragment(), HomeView, View.OnClickListener {
 
     override fun onErrorFunding(t: Throwable) {
         toast("Error "+t)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        compositeDisposable.clear()
     }
 }

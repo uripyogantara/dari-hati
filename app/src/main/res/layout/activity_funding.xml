@@ -25,6 +25,11 @@
             >
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
+    <ProgressBar
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:id="@+id/progres_funding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
     <android.support.v7.widget.RecyclerView
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:id="@+id/rv_funding"
