@@ -13,6 +13,9 @@ data class Student(
 	@field:SerializedName("updated_at")
 	val updatedAt: String? = null,
 
+	@field:SerializedName("foto")
+	val foto: String? = null,
+
 	@field:SerializedName("name")
 	val name: String? = null,
 
@@ -21,6 +24,9 @@ data class Student(
 
 	@field:SerializedName("id")
 	val id: Int? = null,
+
+	@field:SerializedName("deskripsi")
+	val deskripsi: String? = null,
 
 	@field:SerializedName("alamat")
 	val alamat: String? = null

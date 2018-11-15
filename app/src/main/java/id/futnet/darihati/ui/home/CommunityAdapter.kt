@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import id.futnet.darihati.R
 import id.futnet.darihati.model.Community
-import id.futnet.darihati.model.Student
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.list_community.view.*
 
@@ -28,7 +27,7 @@ class CommunityAdapter(val context:Context?, val communities:List<Community>, va
     class ViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView) , LayoutContainer {
         fun bind(community: Community,listener: () -> Unit){
             containerView.tv_community_name.text=community.name
-
+            containerView.tv_community_description.text=community.deskripsi
             val cMember="${community.cMember} Orang"
             containerView.tv_community_member_count.text=cMember
 //            address.text=student.alamat
