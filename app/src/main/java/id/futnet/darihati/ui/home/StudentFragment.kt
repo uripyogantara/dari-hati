@@ -12,10 +12,15 @@ import id.futnet.darihati.api.ApiService
 import kotlinx.android.synthetic.main.fragment_home.*
 import id.futnet.darihati.ui.detail.DetailActivity
 import id.futnet.darihati.model.Student
+import id.futnet.darihati.ui.community.CommunityActivity
+import id.futnet.darihati.ui.funding.FundingActivity
+import id.futnet.darihati.ui.student.StudentActivity
 import org.jetbrains.anko.support.v4.startActivity
 import org.jetbrains.anko.support.v4.toast
 
-class StudentFragment : Fragment(), StudentView {
+class StudentFragment : Fragment(), StudentView, View.OnClickListener {
+
+
     private lateinit var students:MutableList<Student>
     private lateinit var mainGrid:GridLayout
 
@@ -37,6 +42,10 @@ class StudentFragment : Fragment(), StudentView {
 //        presenter.allStudent()
         setStudentAdapater()
         setCommunityAdapater()
+
+        menu_student.setOnClickListener(this)
+        menu_community.setOnClickListener(this)
+        menu_funding.setOnClickListener(this)
     }
 
     private fun setStudentAdapater(){
@@ -53,6 +62,23 @@ class StudentFragment : Fragment(), StudentView {
             startActivity<DetailActivity>()
         }
         rv_komunitas.adapter=adapter
+    }
+
+    override fun onClick(p0: View?) {
+        when(p0?.id){
+            R.id.menu_student->{
+                startActivity<StudentActivity>()
+            }
+            R.id.menu_community->{
+                startActivity<CommunityActivity>()
+            }
+            R.id.menu_funding->{
+                startActivity<FundingActivity>()
+            }
+            R.id.menu_payment->{
+
+            }
+        }
     }
 
     override fun showLoading() {

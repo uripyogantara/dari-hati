@@ -23,15 +23,13 @@ class CommunityAdapter(val context: Context?, val commmunities:List<Community>, 
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//        holder.bind(students.get(position),clickListener)
+        holder.bind(clickListener)
     }
 
     class ViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView) , LayoutContainer {
         private val name=containerView.tv_student_name
         private val address=containerView.tv_student_address
-        fun bind(student: Student, listener: () -> Unit){
-            name.text=student.name
-            address.text=student.alamat
+        fun bind(listener: () -> Unit){
             itemView.setOnClickListener({
                 listener()
             })

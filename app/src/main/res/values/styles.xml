@@ -1,12 +1,21 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorWhite</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:textViewStyle">@style/QuickSandTextViewStyle</item>
+        <item name="android:textViewStyle">@style/BariolTextViewStyle</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="23">true</item>
+    </style>
+
+    <style name="AppThemeNoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorWhite</item>
+        <item name="colorPrimaryDark">@color/colorWhite</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textViewStyle">@style/BariolTextViewStyle</item>
     </style>
 
     <style name="ToolbarTheme" parent="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
@@ -34,11 +43,15 @@
     <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <!--<item name="android:textSize">21sp</item>-->
         <!--<item name="android:textStyle">italic</item>-->
-        <item name="android:fontFamily">@font/quicksand</item>
+        <item name="android:fontFamily">@font/bariol</item>
     </style>
 
     <style name="QuickSandTextViewStyle" parent="android:Widget.TextView">
         <item name="android:fontFamily">@font/quicksand</item>
+    </style>
+
+    <style name="BariolTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">@font/bariol</item>
     </style>
 
 </resources>

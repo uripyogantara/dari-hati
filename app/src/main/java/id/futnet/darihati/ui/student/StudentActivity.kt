@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import id.futnet.darihati.R
 import id.futnet.darihati.model.Student
+import id.futnet.darihati.ui.detailstudent.DetailStudentActivity
 import kotlinx.android.synthetic.main.activity_student.*
+import org.jetbrains.anko.startActivity
 
 class StudentActivity : AppCompatActivity() {
     private lateinit var students: MutableList<Student>
@@ -19,7 +21,7 @@ class StudentActivity : AppCompatActivity() {
 
         rv_student.layoutManager= LinearLayoutManager(this)
         adapter=StudentAdapter(this,students){
-
+            startActivity<DetailStudentActivity>()
         }
 
         rv_student.adapter=adapter
