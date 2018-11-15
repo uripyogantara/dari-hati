@@ -5,7 +5,7 @@ import id.futnet.darihati.utils.PreferencesHelper
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiClient{
@@ -28,10 +28,10 @@ class ApiClient{
                     })
             val retrofit = Retrofit.Builder()
                     .addCallAdapterFactory(
-                            RxJavaCallAdapterFactory.create())
+                            RxJava2CallAdapterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())
                     .client(okHttpClient.build())
-                    .baseUrl("http://192.168.137.1:8000/api/member/")
+                    .baseUrl("http://10.164.85.0:8000/api/member/")
                     .build()
 
             return retrofit.create(ApiService::class.java)

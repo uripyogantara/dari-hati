@@ -26,8 +26,8 @@ class StudentAdapter(val context: Context?, val fundings:List<Student>, val clic
     }
 
     class ViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView) , LayoutContainer {
-        private val name=containerView.tv_student_name
-        private val address=containerView.tv_student_address
+//        private val name=containerView.tv_student_name
+//        private val address=containerView.tv_student_address
         fun bind(listener: () -> Unit){
 //            name.text=student.name
 //            address.text=student.alamat

@@ -27,8 +27,8 @@ class CommunityAdapter(val context: Context?, val commmunities:List<Community>, 
     }
 
     class ViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView) , LayoutContainer {
-        private val name=containerView.tv_student_name
-        private val address=containerView.tv_student_address
+//        private val name=containerView.tv_student_name
+//        private val address=containerView.tv_student_address
         fun bind(listener: () -> Unit){
             itemView.setOnClickListener({
                 listener()

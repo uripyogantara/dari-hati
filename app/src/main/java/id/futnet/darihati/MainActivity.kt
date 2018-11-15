@@ -8,7 +8,7 @@ import android.support.v7.app.ActionBar
 import android.view.Gravity
 import android.view.MenuItem
 import android.widget.ImageView
-import id.futnet.darihati.ui.home.StudentFragment
+import id.futnet.darihati.ui.home.HomeFragment
 import id.futnet.darihati.ui.news.NewsFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.menu_home->{
-                loadFragment(StudentFragment())
+                loadFragment(HomeFragment())
             }
 
             R.id.menu_news->{
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 //        setSupportActionBar(toolbar)
-        loadFragment(StudentFragment())
+        loadFragment(HomeFragment())
         bnv.enableAnimation(false)
         bnv.setLabelVisibilityMode(1)
         bnv.setItemHorizontalTranslationEnabled(false)

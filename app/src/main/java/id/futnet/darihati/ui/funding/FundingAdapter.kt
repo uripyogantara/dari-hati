@@ -26,11 +26,11 @@ class FundingAdapter(val context: Context?, val fundings:List<Funding>, val clic
     }
 
     class ViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView) , LayoutContainer {
-        private val name=containerView.tv_student_name
-        private val address=containerView.tv_student_address
+//        private val name=containerView.tv_student_name
+//        private val address=containerView.tv_student_address
         fun bind(student: Student, listener: () -> Unit){
-            name.text=student.name
-            address.text=student.alamat
+//            name.text=student.name
+//            address.text=student.alamat
             itemView.setOnClickListener({
                 listener()
             })

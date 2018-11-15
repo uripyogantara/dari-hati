@@ -28,11 +28,9 @@ class GaleriAdapter(val context: Context?, val galeri:List<Galeri>, val clickLis
     }
 
     class ViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView) , LayoutContainer {
-        private val name=containerView.tv_student_name
-        private val address=containerView.tv_student_address
+//        private val name=containerView.tv_student_name
+//        private val address=containerView.tv_student_address
         fun bind(student: Student, listener: () -> Unit){
-            name.text=student.name
-            address.text=student.alamat
             itemView.setOnClickListener({
                 listener()
             })

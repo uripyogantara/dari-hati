@@ -6,30 +6,30 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import id.futnet.darihati.R
-import id.futnet.darihati.model.Student
+import id.futnet.darihati.model.Funding
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.list_funding.view.*
 
-class StudentAdapter(val context:Context?,val students:List<Student>, val clickListener: () -> Unit) : RecyclerView.Adapter<StudentAdapter.ViewHolder>() {
+class FundingAdapter(val context:Context?, val fundings:List<Funding>, val clickListener: () -> Unit) : RecyclerView.Adapter<FundingAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view=LayoutInflater.from(context).inflate(R.layout.list_funding,parent,false)
         return ViewHolder(view)
     }
 
     override fun getItemCount(): Int {
-        return 5
+        return fundings.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//        holder.bind(students.get(position),clickListener)
+        holder.bind(fundings.get(position),clickListener)
     }
 
     class ViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView) , LayoutContainer {
-        private val name=containerView.tv_student_name
-        private val address=containerView.tv_student_address
-        fun bind(student: Student,listener: () -> Unit){
-            name.text=student.name
-            address.text=student.alamat
+        fun bind(funding: Funding,listener: () -> Unit){
+            containerView.tv_student_name.text=funding.studentName
+            containerView.tv_funding_title.text=funding.title
+            val count="${funding.maxMember} Orang"
+            containerView.tv_count_join.text=count
             itemView.setOnClickListener({
                 listener()
             })

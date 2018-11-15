@@ -9,23 +9,30 @@ import android.view.ViewGroup
 import android.widget.GridLayout
 import id.futnet.darihati.R
 import id.futnet.darihati.api.ApiService
+import id.futnet.darihati.model.Community
 import kotlinx.android.synthetic.main.fragment_home.*
 import id.futnet.darihati.ui.detail.DetailActivity
-import id.futnet.darihati.model.Student
+import id.futnet.darihati.api.ApiClient
+import id.futnet.darihati.model.Funding
 import id.futnet.darihati.ui.community.CommunityActivity
 import id.futnet.darihati.ui.funding.FundingActivity
 import id.futnet.darihati.ui.student.StudentActivity
+import io.reactivex.disposables.CompositeDisposable
+import kotlinx.android.synthetic.main.activity_funding.*
+import org.jetbrains.anko.support.v4.ctx
 import org.jetbrains.anko.support.v4.startActivity
 import org.jetbrains.anko.support.v4.toast
 
-class StudentFragment : Fragment(), StudentView, View.OnClickListener {
+class HomeFragment : Fragment(), HomeView, View.OnClickListener {
 
 
-    private lateinit var students:MutableList<Student>
+    private lateinit var communities:MutableList<Community>
+    private lateinit var fundings:MutableList<Funding>
     private lateinit var mainGrid:GridLayout
 
     private lateinit var service: ApiService
-    private lateinit var presenter: StudentPresenter
+    private lateinit var presenter: HomePresenter
+    private var compositeDisposable: CompositeDisposable? = null
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_home,container,false)
     }
@@ -37,31 +44,29 @@ class StudentFragment : Fragment(), StudentView, View.OnClickListener {
 
         rv_adik_asuh.layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
         rv_komunitas.layoutManager=LinearLayoutManager(context,LinearLayoutManager.HORIZONTAL,false)
-//        service= ApiClient.create(ctx)
-//        presenter=StudentPresenter(service,this)
-//        presenter.allStudent()
-        setStudentAdapater()
-        setCommunityAdapater()
+
+        service=ApiClient.create(ctx)
+        presenter=HomePresenter(service,this)
+//        compositeDisposable?.add(presenter.community())
+        presenter.community()
+//        compositeDisposable?.add(presenter.funding())
 
         menu_student.setOnClickListener(this)
         menu_community.setOnClickListener(this)
         menu_funding.setOnClickListener(this)
     }
 
-    private fun setStudentAdapater(){
-        students= mutableListOf()
-        val adapter=StudentAdapter(context,students){
-            startActivity<DetailActivity>()
-        }
-        rv_adik_asuh.adapter=adapter
-    }
-
     private fun setCommunityAdapater(){
-        students= mutableListOf()
-        val adapter=CommunityAdapter(context,students){
-            startActivity<DetailActivity>()
+        val adapter=CommunityAdapter(context,communities){
+//            startActivity<DetailActivity>()
         }
         rv_komunitas.adapter=adapter
+    }
+    private fun setStudentAdapater(){
+        val adapter=FundingAdapter(context,fundings ){
+//            startActivity<DetailActivity>()
+        }
+        rv_funding.adapter=adapter
     }
 
     override fun onClick(p0: View?) {
@@ -89,13 +94,28 @@ class StudentFragment : Fragment(), StudentView, View.OnClickListener {
         toast("hide")
     }
 
-    override fun onSuccess(students: MutableList<Student>) {
-        this.students=students
-        setStudentAdapater()
-        toast("sukses")
+    override fun onSuccess(communities: MutableList<Community>) {
+        this.communities=communities
+        setCommunityAdapater()
     }
 
     override fun onError(t: Throwable) {
         toast("Error "+t)
+    }
+
+    override fun showLoadingFunding() {
+
+    }
+
+    override fun hideLoadingFunding() {
+
+    }
+
+    override fun onSuccessFunding(fundings: MutableList<Funding>) {
+
+    }
+
+    override fun onErrorFunding(t: Throwable) {
+
     }
 }

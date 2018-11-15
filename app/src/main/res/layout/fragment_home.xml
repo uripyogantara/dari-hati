@@ -81,7 +81,12 @@
             android:text="Bantu mereka wujudkan mimpi"
             android:textSize="16sp"
             android:textStyle="bold"/>
-
+        <ProgressBar
+            android:id="@+id/progres_funding"
+            android:layout_margin="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_adik_asuh"
             android:layout_width="match_parent"
@@ -94,6 +99,13 @@
             android:text="Bergabunglah dalam komunitas"
             android:textSize="16sp"
             android:textStyle="bold"/>
+
+        <ProgressBar
+            android:id="@+id/progres_community"
+            android:layout_margin="10dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_komunitas"
