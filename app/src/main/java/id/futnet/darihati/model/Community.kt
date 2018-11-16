@@ -43,6 +43,9 @@ data class Community(
 	@field:SerializedName("deskripsi")
 	val deskripsi: String? = null,
 
+	@field:SerializedName("isJoin")
+	val isJoin: Boolean? = null,
+
 	@field:SerializedName("email")
 	val email: String? = null
 ):Parcelable

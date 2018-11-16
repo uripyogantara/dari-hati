@@ -22,5 +22,5 @@
         android:fontFamily="@font/tahu"
         android:textSize="26sp"
         android:textColor="@color/colorPrimary"
-        android:text="Dari hati, untuk Negeri"/>
+        android:text="Bersama-sama membantu Mencerdaskan Bangsa"/>
 </LinearLayout>

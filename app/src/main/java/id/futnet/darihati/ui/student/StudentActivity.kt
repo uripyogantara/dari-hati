@@ -27,7 +27,7 @@ class StudentActivity : AppCompatActivity(), StudentView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_student)
         setSupportActionBar(toolbar)
-
+        setTitle("Adik Asuh")
         students= mutableListOf()
         rv_student.layoutManager= LinearLayoutManager(this)
 

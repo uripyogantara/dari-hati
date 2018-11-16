@@ -26,13 +26,18 @@ class CommunityActivity : AppCompatActivity(), CommunityView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_community)
         setSupportActionBar(toolbar)
-
+        setTitle("Komunitas")
         communities= mutableListOf()
         rv_community.layoutManager=LinearLayoutManager(this)
 
         service=ApiClient.create(this)
         presenter= CommunityPresenter(service,this)
 
+
+    }
+
+    override fun onResume() {
+        super.onResume()
         val disposable=presenter.getCommunity()
         compositeDisposable=CompositeDisposable()
         compositeDisposable.add(disposable)

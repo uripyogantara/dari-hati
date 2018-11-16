@@ -101,6 +101,7 @@
                     </LinearLayout>
                 </LinearLayout>
                 <Button
+                    android:id="@+id/btn_join_community"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:text="join"
@@ -110,6 +111,17 @@
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="10dp"
                     android:textColor="@android:color/white"/>
+                <Button
+                    android:id="@+id/btn_joined"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Sudah Bergabung"
+                    android:textSize="12sp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/btn_grey"
+                    android:textColor="@color/colorGrey"/>
             </LinearLayout>
 
         </LinearLayout>

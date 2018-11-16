@@ -28,6 +28,9 @@ data class Funding(
 	@field:SerializedName("title")
 	val title: String? = null,
 
+	@field:SerializedName("isJoin")
+	val isJoin: Boolean? = null,
+
 	@field:SerializedName("student_name")
 	val studentName: String? = null,
 
@@ -39,6 +42,9 @@ data class Funding(
 
 	@field:SerializedName("updated_at")
 	val updatedAt: String? = null,
+
+	@field:SerializedName("jumlah")
+	val jumlah: Int? = null,
 
 	@field:SerializedName("id")
 	val id: Int? = null,

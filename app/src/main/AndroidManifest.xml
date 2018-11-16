@@ -29,7 +29,8 @@
         <activity android:name=".ui.student.StudentActivity" />
         <activity android:name=".ui.detailstudent.DetailStudentActivity" />
         <activity android:name=".ui.detailcommunity.DetailCommunityActivity" />
-        <activity android:name=".ui.detailfunding.DetailFundingActivity"></activity>
+        <activity android:name=".ui.detailfunding.DetailFundingActivity" />
+        <activity android:name=".ui.payment.PaymentActivity"></activity>
     </application>
 
 </manifest>

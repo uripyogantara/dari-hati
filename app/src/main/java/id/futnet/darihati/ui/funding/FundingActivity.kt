@@ -27,10 +27,17 @@ class FundingActivity : AppCompatActivity(), FundingView {
         setContentView(R.layout.activity_funding)
         setSupportActionBar(toolbar)
 
+        setTitle("Funding")
+
         fundings= mutableListOf()
         rv_funding.layoutManager=LinearLayoutManager(this)
 
         service=ApiClient.create(this)
+    }
+
+    override fun onResume() {
+        super.onResume()
+
         presenter= FundingPresenter(service,this)
 
         compositeDisposable= CompositeDisposable()

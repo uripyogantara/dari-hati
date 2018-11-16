@@ -78,13 +78,14 @@
             android:layout_marginEnd="10dp"
             android:layout_marginBottom="10dp"/>
 
-            <android.support.v7.widget.RecyclerView
-                android:layout_below="@id/tv_galeri"
-                android:id="@+id/rv_funding_member"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+        <android.support.v7.widget.RecyclerView
+            android:layout_below="@id/tv_galeri"
+            android:id="@+id/rv_funding_member"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
 
         <Button
+            android:id="@+id/btn_join_funding"
             android:textColor="@android:color/white"
             android:layout_below="@id/rv_funding_member"
             android:layout_width="match_parent"
@@ -92,5 +93,15 @@
             android:text="JOIN"
             android:background="@drawable/btn_round"
             android:layout_margin="10dp"/>
+
+        <Button
+            android:id="@+id/btn_telah_bergabung"
+            android:layout_below="@id/btn_join_funding"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textColor="@color/colorGrey"
+            android:background="@drawable/btn_round_grey"
+            android:text="Anda Telah Bergabung"/>
     </RelativeLayout>
 </android.support.v4.widget.NestedScrollView>

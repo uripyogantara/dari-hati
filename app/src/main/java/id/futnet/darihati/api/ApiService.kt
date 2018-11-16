@@ -38,4 +38,12 @@ interface ApiService {
 
     @GET("news")
     fun allNews():Observable<MutableList<News>>
+
+    @FormUrlEncoded
+    @POST("funding/join")
+    fun joinFunding(@Field("funding_id") fundingId:String):Observable<ResponseApi>
+
+    @FormUrlEncoded
+    @POST("community/join")
+    fun joinCommunity(@Field("community_id") communityId:String):Observable<ResponseApi>
 }
