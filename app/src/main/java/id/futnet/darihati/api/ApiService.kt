@@ -9,6 +9,16 @@ interface ApiService {
     @POST("login")
     fun login(@Field("email") email:String,@Field("password") password:String): Observable<User>
 
+    @FormUrlEncoded
+    @POST("register")
+    fun register(@Field("name") name:String,
+                 @Field("email") email:String,
+                 @Field("phone") phone:String,
+                 @Field("alamat") alamat:String,
+                 @Field("identity") identity:String,
+                 @Field("password") password:String
+                 ): Observable<User>
+
     @GET("student")
     fun allStudent():Observable<MutableList<Student>>
 

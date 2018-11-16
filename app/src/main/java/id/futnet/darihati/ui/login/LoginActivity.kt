@@ -34,6 +34,7 @@ class LoginActivity : AppCompatActivity(),AuthView {
 
         txt_register.setOnClickListener({
             startActivity<RegisterActivity>()
+            finish()
         })
     }
 
@@ -46,9 +47,13 @@ class LoginActivity : AppCompatActivity(),AuthView {
     }
 
     override fun onSuccess(user: User) {
-//        toast(user.token.toString())
         preferencesHelper.login=true
         preferencesHelper.token=user.token
+        preferencesHelper.name=user.name
+        preferencesHelper.phone=user.phone
+        preferencesHelper.address=user.alamat
+        preferencesHelper.identity=user.identity
+        preferencesHelper.email=user.email
         startActivity<MainActivity>()
         finish()
 

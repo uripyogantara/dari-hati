@@ -25,36 +25,49 @@
             android:adjustViewBounds="true"
             android:src="@drawable/logo"/>
         <EditText
+            android:id="@+id/et_nama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nama" />
+            android:hint="Nama"
+            android:inputType="text"/>
 
         <EditText
+            android:inputType="number"
+            android:id="@+id/et_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Telepon" />
 
         <EditText
+            android:inputType="textEmailAddress"
+            android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email" />
 
         <EditText
+            android:inputType="number"
+            android:id="@+id/et_identity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="No KTP." />
 
         <EditText
+            android:inputType="text"
+            android:id="@+id/et_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Alamt" />
+            android:hint="Alamat" />
 
         <EditText
+            android:inputType="textPassword"
+            android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password" />
 
         <Button
+            android:id="@+id/btn_register"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
