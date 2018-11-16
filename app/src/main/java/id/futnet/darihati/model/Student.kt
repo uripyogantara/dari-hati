@@ -1,33 +1,36 @@
 package id.futnet.darihati.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Student(
 
-	@field:SerializedName("dateofbirth")
-	val dateofbirth: String? = null,
+	@SerializedName("dateofbirth")
+	val dateofbirth: String? ,
 
-	@field:SerializedName("community_id")
+	@SerializedName("community_id")
 	val communityId: Int? = null,
 
-	@field:SerializedName("updated_at")
+	@SerializedName("updated_at")
 	val updatedAt: String? = null,
 
-	@field:SerializedName("foto")
+	@SerializedName("foto")
 	val foto: String? = null,
 
-	@field:SerializedName("name")
+	@SerializedName("name")
 	val name: String? = null,
 
-	@field:SerializedName("created_at")
+	@SerializedName("created_at")
 	val createdAt: String? = null,
 
-	@field:SerializedName("id")
+	@SerializedName("id")
 	val id: Int? = null,
 
-	@field:SerializedName("deskripsi")
+	@SerializedName("deskripsi")
 	val deskripsi: String? = null,
 
-	@field:SerializedName("alamat")
+	@SerializedName("alamat")
 	val alamat: String? = null
-)
+):Parcelable

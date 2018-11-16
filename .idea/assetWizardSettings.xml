@@ -30,8 +30,8 @@
                           <map>
                             <entry key="assetSourceType" value="FILE" />
                             <entry key="color" value="ffffff" />
-                            <entry key="outputName" value="ic_home_active" />
-                            <entry key="sourceFile" value="D:\kuliah\darihati\home\home_active.svg" />
+                            <entry key="outputName" value="ic_profil" />
+                            <entry key="sourceFile" value="D:\kuliah\darihati\nav_button\person_button.svg" />
                           </map>
                         </option>
                       </PersistentState>

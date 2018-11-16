@@ -44,7 +44,7 @@ class StudentActivity : AppCompatActivity(), StudentView {
 
     private fun setAdapter(){
         adapter=StudentAdapter(this,students){
-            startActivity<DetailStudentActivity>()
+            startActivity<DetailStudentActivity>("student" to it)
         }
 
         rv_student.adapter=adapter

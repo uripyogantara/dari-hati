@@ -49,8 +49,11 @@ class HomeFragment : Fragment(), HomeView, View.OnClickListener {
         presenter=HomePresenter(service,this)
         val communityDisposable=presenter.community()
         val fundingDisposable=presenter.funding()
-        compositeDisposable?.add(communityDisposable)
-        compositeDisposable?.add(fundingDisposable)
+
+        compositeDisposable=CompositeDisposable()
+
+        compositeDisposable.add(communityDisposable)
+        compositeDisposable.add(fundingDisposable)
         menu_student.setOnClickListener(this)
         menu_community.setOnClickListener(this)
         menu_funding.setOnClickListener(this)

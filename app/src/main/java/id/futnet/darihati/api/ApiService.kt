@@ -2,10 +2,7 @@ package id.futnet.darihati.api
 
 import id.futnet.darihati.model.*
 import io.reactivex.Observable
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface ApiService {
     @FormUrlEncoded
@@ -14,6 +11,9 @@ interface ApiService {
 
     @GET("student")
     fun allStudent():Observable<MutableList<Student>>
+
+    @GET("student/{id}")
+    fun studentDetail(@Path("id") id:Int?):Observable<MutableList<StudentDetail>>
 
     @GET("event")
     fun allEvent():Observable<List<Event>>

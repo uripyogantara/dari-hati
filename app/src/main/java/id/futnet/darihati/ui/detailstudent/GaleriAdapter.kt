@@ -6,21 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import id.futnet.darihati.R
-import id.futnet.darihati.model.Community
-import id.futnet.darihati.model.Funding
-import id.futnet.darihati.model.Galeri
-import id.futnet.darihati.model.Student
+import id.futnet.darihati.model.*
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.list_funding.view.*
 
-class GaleriAdapter(val context: Context?, val galeri:List<Galeri>, val clickListener: () -> Unit) : RecyclerView.Adapter<GaleriAdapter.ViewHolder>() {
+class GaleriAdapter(val context: Context?, val galeri:List<StudentDetail>, val clickListener: () -> Unit) : RecyclerView.Adapter<GaleriAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view= LayoutInflater.from(context).inflate(R.layout.list_galeri,parent,false)
         return ViewHolder(view)
     }
 
     override fun getItemCount(): Int {
-        return 12
+        return galeri.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
