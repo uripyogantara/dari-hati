@@ -1,7 +1,10 @@
 package id.futnet.darihati.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Funding(
 
 	@field:SerializedName("end_date")
@@ -48,4 +51,4 @@ data class Funding(
 
 	@field:SerializedName("start_date")
 	val startDate: String? = null
-)
+):Parcelable

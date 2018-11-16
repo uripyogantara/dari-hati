@@ -1,7 +1,10 @@
 package id.futnet.darihati.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class Community(
 
 	@field:SerializedName("address")
@@ -42,4 +45,4 @@ data class Community(
 
 	@field:SerializedName("email")
 	val email: String? = null
-)
+):Parcelable

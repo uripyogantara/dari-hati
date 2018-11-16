@@ -25,7 +25,7 @@
             android:gravity="center_vertical">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/circleImageView"
+                android:id="@+id/img_community"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:src="@drawable/kakak_asuh" />
@@ -47,6 +47,7 @@
                         android:gravity="center_horizontal"
                         android:layout_marginStart="10dp">
                         <TextView
+                            android:id="@+id/tv_c_member"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textStyle="bold"
@@ -66,12 +67,14 @@
                         android:gravity="center_horizontal"
                         android:layout_marginStart="10dp">
                         <TextView
+                            android:id="@+id/tv_c_student"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textStyle="bold"
                             android:text="53"
                             android:textSize="20sp"/>
                         <TextView
+                            android:id="@+id/c_funding"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:textSize="16sp"
@@ -112,6 +115,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/tv_community_name"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_width="match_parent"
@@ -122,6 +126,17 @@
             android:drawablePadding="10dp"/>
 
         <TextView
+            android:id="@+id/tv_community_description"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kakak Asuh Bali merupakan kafjafkjakfjj Kakak Asuh Bali merupakan kafjafkjakfjj Kakak Asuh Bali merupakan kafjafkjakfjj"
+            android:textSize="16sp"
+            android:drawablePadding="10dp"/>
+
+        <TextView
+            android:id="@+id/tv_community_email"
             android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
@@ -134,6 +149,7 @@
             android:drawablePadding="10dp"/>
 
         <TextView
+            android:id="@+id/tv_community_phone"
             android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
@@ -145,6 +161,7 @@
             android:textSize="20sp"
             android:drawablePadding="10dp"/>
         <TextView
+            android:id="@+id/tv_community_address"
             android:layout_marginTop="10dp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"

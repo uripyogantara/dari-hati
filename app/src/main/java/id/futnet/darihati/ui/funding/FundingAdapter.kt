@@ -10,7 +10,7 @@ import id.futnet.darihati.model.Funding
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.list_funding_activity.view.*
 
-class FundingAdapter(val context: Context?, val fundings:List<Funding>, val clickListener: () -> Unit) : RecyclerView.Adapter<FundingAdapter.ViewHolder>() {
+class FundingAdapter(val context: Context?, val fundings:List<Funding>, val clickListener: (Funding) -> Unit) : RecyclerView.Adapter<FundingAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view= LayoutInflater.from(context).inflate(R.layout.list_funding_activity,parent,false)
         return ViewHolder(view)
@@ -25,13 +25,13 @@ class FundingAdapter(val context: Context?, val fundings:List<Funding>, val clic
     }
 
     class ViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView) , LayoutContainer {
-        fun bind(funding: Funding, listener: () -> Unit){
+        fun bind(funding: Funding, listener: (Funding) -> Unit){
             containerView.tv_student_name.text=funding.studentName
             containerView.tv_funding_title.text=funding.title
             val count="${funding.maxMember} Orang"
             containerView.tv_count_join.text=count
             itemView.setOnClickListener({
-                listener()
+                listener(funding)
             })
         }
     }

@@ -40,7 +40,7 @@ class CommunityActivity : AppCompatActivity(), CommunityView {
 
     private fun setAdapter(){
         adapter=CommunityAdapter(this,communities){
-            startActivity<DetailCommunityActivity>()
+            startActivity<DetailCommunityActivity>("community" to it)
         }
         rv_community.adapter=adapter
     }

@@ -7,10 +7,12 @@ import id.futnet.darihati.R
 import id.futnet.darihati.api.ApiClient
 import id.futnet.darihati.api.ApiService
 import id.futnet.darihati.model.Funding
+import id.futnet.darihati.ui.detailfunding.DetailFundingActivity
 import id.futnet.darihati.utils.invisible
 import id.futnet.darihati.utils.visible
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.activity_funding.*
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
 class FundingActivity : AppCompatActivity(), FundingView {
@@ -39,7 +41,7 @@ class FundingActivity : AppCompatActivity(), FundingView {
 
     private fun setAdapter(){
         adapter=FundingAdapter(this,fundings){
-
+            startActivity<DetailFundingActivity>("funding" to it)
         }
         rv_funding.adapter=adapter
     }

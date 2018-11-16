@@ -13,7 +13,7 @@ import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.list_community_activity.view.*
 import kotlinx.android.synthetic.main.list_funding.view.*
 
-class CommunityAdapter(val context: Context?, val communities:List<Community>, val clickListener: () -> Unit) : RecyclerView.Adapter<CommunityAdapter.ViewHolder>() {
+class CommunityAdapter(val context: Context?, val communities:List<Community>, val clickListener: (Community) -> Unit) : RecyclerView.Adapter<CommunityAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view= LayoutInflater.from(context).inflate(R.layout.list_community_activity,parent,false)
         return ViewHolder(view)
@@ -28,13 +28,13 @@ class CommunityAdapter(val context: Context?, val communities:List<Community>, v
     }
 
     class ViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView) , LayoutContainer {
-        fun bind(community: Community,listener: () -> Unit){
+        fun bind(community: Community,listener: (Community) -> Unit){
             containerView.tv_community_name.text=community.name
             containerView.tv_community_description.text=community.deskripsi
             containerView.tv_community_member.text="${community.cMember} Orang Anggota"
             containerView.tv_community_student.text="${community.cStudent} Orang Adik Asuh"
             itemView.setOnClickListener({
-                listener()
+                listener(community)
             })
         }
     }

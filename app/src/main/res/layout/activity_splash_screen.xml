@@ -21,6 +21,6 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/tahu"
         android:textSize="26sp"
-        android:textColor="@color/colorPrimaryDark"
-        android:text="Dari Hati, untuk Negeri"/>
+        android:textColor="@color/colorPrimary"
+        android:text="Dari hati, untuk Negeri"/>
 </LinearLayout>

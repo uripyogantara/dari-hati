@@ -26,9 +26,10 @@
         </activity>
         <activity android:name=".ui.funding.FundingActivity" />
         <activity android:name=".ui.community.CommunityActivity" />
-        <activity android:name=".ui.student.StudentActivity"></activity>
-        <activity android:name=".ui.detailstudent.DetailStudentActivity"></activity>
-        <activity android:name=".ui.detailcommunity.DetailCommunityActivity"></activity>
+        <activity android:name=".ui.student.StudentActivity" />
+        <activity android:name=".ui.detailstudent.DetailStudentActivity" />
+        <activity android:name=".ui.detailcommunity.DetailCommunityActivity" />
+        <activity android:name=".ui.detailfunding.DetailFundingActivity"></activity>
     </application>
 
 </manifest>
