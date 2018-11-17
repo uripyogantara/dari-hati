@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
 import id.futnet.darihati.R
 import id.futnet.darihati.model.Student
 import kotlinx.android.extensions.LayoutContainer
@@ -30,6 +31,7 @@ class StudentAdapter(val context: Context?, val students:List<Student>, val clic
         fun bind(student: Student, listener: (Student) -> Unit){
             containerView.tv_student_name.text=student.name
             containerView.tv_student_address.text=student.alamat
+            Glide.with(containerView.context).load("https://darihati.futnet.id/adikasuh/${student.foto}").into(containerView.img_student)
             containerView.setOnClickListener({
                 listener(student)
             })

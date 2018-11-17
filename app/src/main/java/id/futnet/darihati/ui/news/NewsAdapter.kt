@@ -5,9 +5,11 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
 import id.futnet.darihati.R
 import id.futnet.darihati.model.News
 import kotlinx.android.extensions.LayoutContainer
+import kotlinx.android.synthetic.main.list_news.*
 import kotlinx.android.synthetic.main.list_news.view.*
 
 class NewsAdapter(val context:Context?,val news:List<News>) : RecyclerView.Adapter<NewsAdapter.ViewHolder>() {
@@ -27,7 +29,11 @@ class NewsAdapter(val context:Context?,val news:List<News>) : RecyclerView.Adapt
     class ViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView),LayoutContainer {
         fun bind(news: News){
             containerView.tv_news_title.text=news.title
-            containerView.tv_news_description.text="${news.communityId} - ${news.createdAt}"
+            containerView.tv_news_description.text="${news.communityName} - ${news.createdAt}"
+
+            if (news.newsDetail?.size != null && news.newsDetail.size>0) {
+                    Glide.with(containerView.context).load("https://darihati.futnet.id/berita/${news.newsDetail.get(0)?.foto}").into(img_news)
+            }
         }
     }
 }

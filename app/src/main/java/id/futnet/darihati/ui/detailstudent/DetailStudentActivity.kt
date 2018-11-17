@@ -3,6 +3,7 @@ package id.futnet.darihati.ui.detailstudent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
+import com.bumptech.glide.Glide
 import id.futnet.darihati.R
 import id.futnet.darihati.api.ApiClient
 import id.futnet.darihati.api.ApiService
@@ -34,8 +35,9 @@ class DetailStudentActivity : AppCompatActivity(), GaleriView {
 
         tv_student_name.text=student.name
         tv_student_address.text=student.alamat
-        tv_community_name.text=student.communityId.toString()
+        tv_community_name.text=student.communityName
         tv_student_description.text=student.deskripsi
+        Glide.with(this).load("https://darihati.futnet.id/adikasuh/${student.foto}").into(img_student)
 
         service=ApiClient.create(this)
         presenter= GaleriPresenter(service,this)

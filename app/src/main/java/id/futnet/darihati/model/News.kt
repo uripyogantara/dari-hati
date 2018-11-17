@@ -7,6 +7,10 @@ data class News(
 	@field:SerializedName("community_id")
 	val communityId: Int? = null,
 
+
+	@SerializedName("community_name")
+	val communityName: String? = null,
+
 	@field:SerializedName("news_detail")
 	val newsDetail: List<NewsDetailItem?>? = null,
 

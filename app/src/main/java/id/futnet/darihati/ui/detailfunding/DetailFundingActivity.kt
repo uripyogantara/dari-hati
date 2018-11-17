@@ -3,6 +3,7 @@ package id.futnet.darihati.ui.detailfunding
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
+import com.bumptech.glide.Glide
 import id.futnet.darihati.R
 import id.futnet.darihati.api.ApiClient
 import id.futnet.darihati.api.ApiService
@@ -30,6 +31,7 @@ class DetailFundingActivity : AppCompatActivity(), DetailFundingView {
 
         tv_funding_title.text=funding.title
         tv_funding_description.text=funding.deskripsi
+        Glide.with(this).load("https://darihati.futnet.id/adikasuh/${funding.studentFoto}").into(img_student)
 
         members= mutableListOf()
 

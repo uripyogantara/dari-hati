@@ -10,7 +10,7 @@
         android:id="@+id/img_funding"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/adik"
+        android:src="@drawable/urip"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"/>
 

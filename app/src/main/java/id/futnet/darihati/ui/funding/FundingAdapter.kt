@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
 import id.futnet.darihati.R
 import id.futnet.darihati.model.Funding
 import kotlinx.android.extensions.LayoutContainer
@@ -30,6 +31,7 @@ class FundingAdapter(val context: Context?, val fundings:List<Funding>, val clic
             containerView.tv_funding_title.text=funding.title
             val count="${funding.maxMember} Orang"
             containerView.tv_count_join.text=count
+            Glide.with(containerView.context).load("https://darihati.futnet.id/adikasuh/${funding.studentFoto}").into(containerView.img_funding)
             itemView.setOnClickListener({
                 listener(funding)
             })

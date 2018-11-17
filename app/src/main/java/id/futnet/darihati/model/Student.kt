@@ -16,6 +16,9 @@ data class Student(
 	@SerializedName("updated_at")
 	val updatedAt: String? = null,
 
+	@SerializedName("community_name")
+	val communityName: String? = null,
+
 	@SerializedName("foto")
 	val foto: String? = null,
 

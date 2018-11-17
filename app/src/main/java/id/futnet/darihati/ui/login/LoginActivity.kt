@@ -1,5 +1,6 @@
 package id.futnet.darihati.ui.login
 
+import android.app.ProgressDialog
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import id.futnet.darihati.MainActivity
@@ -10,6 +11,8 @@ import id.futnet.darihati.api.ApiService
 import id.futnet.darihati.model.User
 import id.futnet.darihati.utils.PreferencesHelper
 import kotlinx.android.synthetic.main.activity_login.*
+import org.jetbrains.anko.indeterminateProgressDialog
+import org.jetbrains.anko.progressDialog
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
@@ -17,6 +20,7 @@ class LoginActivity : AppCompatActivity(),AuthView {
     private lateinit var presenter: AuthPresenter
     private lateinit var service: ApiService
     private lateinit var preferencesHelper: PreferencesHelper
+    private lateinit var dialog:ProgressDialog
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -39,11 +43,13 @@ class LoginActivity : AppCompatActivity(),AuthView {
     }
 
     override fun showLoading() {
-        toast("loading")
+//        toast("loading")
+        dialog = indeterminateProgressDialog(message = "Please wait a bit…", title = "Login")
+        dialog.show()
     }
 
     override fun hideLoading() {
-
+        dialog.hide()
     }
 
     override fun onSuccess(user: User) {

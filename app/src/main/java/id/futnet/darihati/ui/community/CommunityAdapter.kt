@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
 import id.futnet.darihati.R
 import id.futnet.darihati.model.Community
 import id.futnet.darihati.model.Funding
@@ -33,6 +34,7 @@ class CommunityAdapter(val context: Context?, val communities:List<Community>, v
             containerView.tv_community_description.text=community.deskripsi
             containerView.tv_community_member.text="${community.cMember} Orang Anggota"
             containerView.tv_community_student.text="${community.cStudent} Orang Adik Asuh"
+            Glide.with(containerView.context).load("https://darihati.futnet.id/community/${community.logo}").into(containerView.img_community)
             itemView.setOnClickListener({
                 listener(community)
             })

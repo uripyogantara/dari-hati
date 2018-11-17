@@ -13,11 +13,14 @@ import kotlinx.android.synthetic.main.fragment_home.*
 import id.futnet.darihati.api.ApiClient
 import id.futnet.darihati.model.Funding
 import id.futnet.darihati.ui.community.CommunityActivity
+import id.futnet.darihati.ui.detailcommunity.DetailCommunityActivity
+import id.futnet.darihati.ui.detailfunding.DetailFundingActivity
 import id.futnet.darihati.ui.funding.FundingActivity
 import id.futnet.darihati.ui.student.StudentActivity
 import id.futnet.darihati.utils.gone
 import id.futnet.darihati.utils.visible
 import io.reactivex.disposables.CompositeDisposable
+import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.support.v4.ctx
 import org.jetbrains.anko.support.v4.startActivity
 import org.jetbrains.anko.support.v4.toast
@@ -58,13 +61,13 @@ class HomeFragment : Fragment(), HomeView, View.OnClickListener {
 
     private fun setCommunityAdapater(){
         val adapter=CommunityAdapter(context,communities){
-//            startActivity<DetailActivity>()
+            startActivity<DetailCommunityActivity>("community" to it)
         }
         rv_komunitas.adapter=adapter
     }
     private fun setFundingAdapater(){
         val adapter=FundingAdapter(context,fundings ){
-//            startActivity<DetailActivity>()
+            startActivity<DetailFundingActivity>("funding" to it)
         }
         rv_funding.adapter=adapter
     }

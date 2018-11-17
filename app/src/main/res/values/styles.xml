@@ -47,10 +47,6 @@
         <item name="android:fontFamily">@font/bariol</item>
     </style>
 
-    <style name="QuickSandTextViewStyle" parent="android:Widget.TextView">
-        <item name="android:fontFamily">@font/quicksand</item>
-    </style>
-
     <style name="BariolTextViewStyle" parent="android:Widget.TextView">
         <item name="android:fontFamily">@font/bariol</item>
     </style>

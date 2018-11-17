@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/tahu"
-        android:textSize="26sp"
+        android:textSize="20sp"
         android:textColor="@color/colorPrimary"
-        android:text="Bersama-sama membantu Mencerdaskan Bangsa"/>
+        android:text="Bersama-sama membantu mencerdaskan Bangsa"/>
 </LinearLayout>

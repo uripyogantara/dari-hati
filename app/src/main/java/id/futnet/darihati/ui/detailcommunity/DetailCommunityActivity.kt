@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import id.futnet.darihati.R
 import id.futnet.darihati.api.ApiClient
 import id.futnet.darihati.api.ApiService
@@ -68,6 +69,8 @@ class DetailCommunityActivity : AppCompatActivity(), NewsCommunityView {
 
         tv_c_member.text=community.cMember.toString()
         tv_c_student.text=community.cStudent.toString()
+
+        Glide.with(this).load("https://darihati.futnet.id/community/${community.logo}").into(img_community)
     }
 
     private fun setAdapter(){
