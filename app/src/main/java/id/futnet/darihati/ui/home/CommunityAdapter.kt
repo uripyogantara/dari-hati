@@ -32,9 +32,9 @@ class CommunityAdapter(val context:Context?, val communities:List<Community>, va
             containerView.tv_community_description.text=community.deskripsi
             val cMember="${community.cMember} Orang"
             containerView.tv_community_member_count.text=cMember
-            Glide.with(containerView.context).load("https://darihati.futnet.id/community/${community.logo}").into(containerView.img_community)
+            Glide.with(containerView.context).load("https://darihati.uripyogantara.id/community/${community.logo}").into(containerView.img_community)
 
-            Log.d("img com","https://darihati.futnet.id/community/${community.logo}")
+            Log.d("img com","https://darihati.uripyogantara.id/community/${community.logo}")
 //            address.text=student.alamat
             itemView.setOnClickListener({
                 listener(community)

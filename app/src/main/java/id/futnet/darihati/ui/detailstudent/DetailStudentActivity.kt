@@ -37,7 +37,7 @@ class DetailStudentActivity : AppCompatActivity(), GaleriView {
         tv_student_address.text=student.alamat
         tv_community_name.text=student.communityName
         tv_student_description.text=student.deskripsi
-        Glide.with(this).load("https://darihati.futnet.id/adikasuh/${student.foto}").into(img_student)
+        Glide.with(this).load("https://darihati.uripyogantara.id/adikasuh/${student.foto}").into(img_student)
 
         service=ApiClient.create(this)
         presenter= GaleriPresenter(service,this)

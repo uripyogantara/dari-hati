@@ -118,7 +118,6 @@ class HomeFragment : Fragment(), HomeView, View.OnClickListener {
     override fun onSuccessFunding(fundings: MutableList<Funding>) {
         this.fundings=fundings
         setFundingAdapater()
-        toast("sukses funding")
     }
 
     override fun onErrorFunding(t: Throwable) {

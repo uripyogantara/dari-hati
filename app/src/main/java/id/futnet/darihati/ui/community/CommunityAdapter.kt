@@ -34,7 +34,7 @@ class CommunityAdapter(val context: Context?, val communities:List<Community>, v
             containerView.tv_community_description.text=community.deskripsi
             containerView.tv_community_member.text="${community.cMember} Orang Anggota"
             containerView.tv_community_student.text="${community.cStudent} Orang Adik Asuh"
-            Glide.with(containerView.context).load("https://darihati.futnet.id/community/${community.logo}").into(containerView.img_community)
+            Glide.with(containerView.context).load("https://darihati.uripyogantara.id/community/${community.logo}").into(containerView.img_community)
             itemView.setOnClickListener({
                 listener(community)
             })

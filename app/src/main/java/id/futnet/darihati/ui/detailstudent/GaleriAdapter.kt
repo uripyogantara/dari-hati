@@ -30,7 +30,7 @@ class GaleriAdapter(val context: Context?, val galeri:List<StudentDetail>, val c
 //        private val name=containerView.tv_student_name
 //        private val address=containerView.tv_student_address
         fun bind(detail: StudentDetail, listener: () -> Unit){
-    Glide.with(containerView.context).load("https://darihati.futnet.id/rumah/${detail.fotoRumah}").into(containerView.img_galeri)
+    Glide.with(containerView.context).load("https://darihati.uripyogantara.id/rumah/${detail.fotoRumah}").into(containerView.img_galeri)
             itemView.setOnClickListener({
                 listener()
             })

@@ -31,7 +31,7 @@ class DetailFundingActivity : AppCompatActivity(), DetailFundingView {
 
         tv_funding_title.text=funding.title
         tv_funding_description.text=funding.deskripsi
-        Glide.with(this).load("https://darihati.futnet.id/adikasuh/${funding.studentFoto}").into(img_student)
+        Glide.with(this).load("https://darihati.uripyogantara.id/adikasuh/${funding.studentFoto}").into(img_student)
 
         members= mutableListOf()
 

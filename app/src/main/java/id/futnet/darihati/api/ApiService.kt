@@ -1,6 +1,7 @@
 package id.futnet.darihati.api
 
 import id.futnet.darihati.model.*
+import io.reactivex.Completable
 import io.reactivex.Observable
 import retrofit2.http.*
 
@@ -56,4 +57,8 @@ interface ApiService {
     @FormUrlEncoded
     @POST("community/join")
     fun joinCommunity(@Field("community_id") communityId:String):Observable<ResponseApi>
+
+    @FormUrlEncoded
+    @POST("send/otp")
+    fun sendOtp(@Field("type") type:String,@Field("phone_number") phoneNumber:String,@Field("email") email:String):Observable<OtpResponse>
 }

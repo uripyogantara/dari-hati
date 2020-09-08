@@ -31,8 +31,8 @@ class NewsCommunityAdapter(val context: Context?, val news:List<News>, val click
 
     class ViewHolder(override val containerView: View) : RecyclerView.ViewHolder(containerView) , LayoutContainer {
         fun bind(news: News,listener: () -> Unit){
-            Glide.with(containerView.context).load("https://darihati.futnet.id/berita/${news.newsDetail?.get(0)?.foto}").into(img_galeri)
-            Log.d("img news","https://darihati.futnet.id/berita/${news.newsDetail?.get(0)?.foto}")
+            Glide.with(containerView.context).load("https://darihati.uripyogantara.id/berita/${news.newsDetail?.get(0)?.foto}").into(img_galeri)
+            Log.d("img news","https://darihati.uripyogantara.id/berita/${news.newsDetail?.get(0)?.foto}")
             itemView.setOnClickListener({
                 listener()
             })

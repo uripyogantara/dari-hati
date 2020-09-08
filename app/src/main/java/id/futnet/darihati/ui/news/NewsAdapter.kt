@@ -32,7 +32,7 @@ class NewsAdapter(val context:Context?,val news:List<News>) : RecyclerView.Adapt
             containerView.tv_news_description.text="${news.communityName} - ${news.createdAt}"
 
             if (news.newsDetail?.size != null && news.newsDetail.size>0) {
-                    Glide.with(containerView.context).load("https://darihati.futnet.id/berita/${news.newsDetail.get(0)?.foto}").into(img_news)
+                    Glide.with(containerView.context).load("https://darihati.uripyogantara.id/berita/${news.newsDetail.get(0)?.foto}").into(img_news)
             }
         }
     }

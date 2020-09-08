@@ -31,7 +31,7 @@ class StudentAdapter(val context: Context?, val students:List<Student>, val clic
         fun bind(student: Student, listener: (Student) -> Unit){
             containerView.tv_student_name.text=student.name
             containerView.tv_student_address.text=student.alamat
-            Glide.with(containerView.context).load("https://darihati.futnet.id/adikasuh/${student.foto}").into(containerView.img_student)
+            Glide.with(containerView.context).load("https://darihati.uripyogantara.id/adikasuh/${student.foto}").into(containerView.img_student)
             containerView.setOnClickListener({
                 listener(student)
             })

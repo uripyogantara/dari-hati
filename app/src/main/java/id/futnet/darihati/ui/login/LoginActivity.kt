@@ -12,7 +12,6 @@ import id.futnet.darihati.model.User
 import id.futnet.darihati.utils.PreferencesHelper
 import kotlinx.android.synthetic.main.activity_login.*
 import org.jetbrains.anko.indeterminateProgressDialog
-import org.jetbrains.anko.progressDialog
 import org.jetbrains.anko.startActivity
 import org.jetbrains.anko.toast
 
@@ -33,7 +32,7 @@ class LoginActivity : AppCompatActivity(),AuthView {
 
         btn_login.setOnClickListener({
             presenter.login(et_email.text.toString(),et_password.text.toString())
-//            startActivity<MainActivity>()
+//            startActivity<OtpActivity>()
         })
 
         txt_register.setOnClickListener({

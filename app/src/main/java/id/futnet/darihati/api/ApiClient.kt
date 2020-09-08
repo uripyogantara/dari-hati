@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiClient{
     companion object {
-        fun create(context: Context): ApiService {
+        fun create(context: Context,baseUrl:String="https://darihati.uripyogantara.id/api/member/"): ApiService {
             val okHttpClient=OkHttpClient.Builder()
             val interceptor=HttpLoggingInterceptor()
             val preferencesHelper=PreferencesHelper(context)
@@ -31,7 +31,7 @@ class ApiClient{
                             RxJava2CallAdapterFactory.create())
                     .addConverterFactory(GsonConverterFactory.create())
                     .client(okHttpClient.build())
-                    .baseUrl("https://darihati.futnet.id/api/member/")
+                    .baseUrl(baseUrl)
                     .build()
 
             return retrofit.create(ApiService::class.java)

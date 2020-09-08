@@ -33,8 +33,8 @@ class FundingAdapter(val context:Context?, val fundings:List<Funding>, val click
             val count="${funding.maxMember} Orang"
             containerView.tv_count_join.text=count
 
-            Glide.with(containerView.context).load("https://darihati.futnet.id/adikasuh/${funding.studentFoto}").into(containerView.img_funding)
-            Log.d("img com","https://darihati.futnet.id/funding/${funding.studentFoto}")
+            Glide.with(containerView.context).load("https://darihati.uripyogantara.id/adikasuh/${funding.studentFoto}").into(containerView.img_funding)
+            Log.d("img com","https://darihati.uripyogantara.id/funding/${funding.studentFoto}")
             itemView.setOnClickListener({
                 listener(funding)
             })

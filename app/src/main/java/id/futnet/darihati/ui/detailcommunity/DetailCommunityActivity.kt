@@ -70,7 +70,7 @@ class DetailCommunityActivity : AppCompatActivity(), NewsCommunityView {
         tv_c_member.text=community.cMember.toString()
         tv_c_student.text=community.cStudent.toString()
 
-        Glide.with(this).load("https://darihati.futnet.id/community/${community.logo}").into(img_community)
+        Glide.with(this).load("https://darihati.uripyogantara.id/community/${community.logo}").into(img_community)
     }
 
     private fun setAdapter(){
