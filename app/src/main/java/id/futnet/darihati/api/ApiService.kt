@@ -38,6 +38,9 @@ interface ApiService {
     @GET("funding")
     fun allFunding():Observable<MutableList<Funding>>
 
+    @GET("funding-by-member")
+    fun fundingByMember():Observable<MutableList<Funding>>
+
     @GET("funding/{id}/member")
     fun fundingMember(@Path("id") id: Int?):Observable<MutableList<Member>>
 
@@ -61,4 +64,14 @@ interface ApiService {
     @FormUrlEncoded
     @POST("send/otp")
     fun sendOtp(@Field("type") type:String,@Field("phone_number") phoneNumber:String,@Field("email") email:String):Observable<OtpResponse>
+
+    @FormUrlEncoded
+    @POST("confirm/otp")
+    fun confirmOtp(@Field("type") type:String,@Field("otp") otp:String):Observable<OtpResponse>
+
+    @POST("payment/{id}")
+    fun pay(@Path("id") id: Int?):Observable<ResponseApi>
+
+    @GET("payment/index/{id}")
+    fun paymentByFunding(@Path("id") id: Int?):Observable<MutableList<Payment>>
 }

@@ -1,6 +1,7 @@
 package id.futnet.darihati.api
 
 import android.content.Context
+import android.util.Log
 import id.futnet.darihati.utils.PreferencesHelper
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -14,7 +15,6 @@ class ApiClient{
             val okHttpClient=OkHttpClient.Builder()
             val interceptor=HttpLoggingInterceptor()
             val preferencesHelper=PreferencesHelper(context)
-
             interceptor.level=HttpLoggingInterceptor.Level.BODY
 
             okHttpClient.addInterceptor(interceptor)

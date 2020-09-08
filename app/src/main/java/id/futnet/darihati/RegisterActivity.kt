@@ -27,7 +27,7 @@ class RegisterActivity : AppCompatActivity() {
         btn_register.setOnClickListener {
             dialog = indeterminateProgressDialog(message = "Please wait a bit…", title = "Register")
             dialog.show()
-            service.register(et_nama.text.toString(),et_email.text.toString(),et_phone.text.toString(),et_address.text.toString(),et_identity.text.toString(),et_password.text.toString())
+            service.register(et_nama.text.toString(),et_email.text.toString(),et_phone.text.toString(),"-","-",et_password.text.toString())
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe({user->

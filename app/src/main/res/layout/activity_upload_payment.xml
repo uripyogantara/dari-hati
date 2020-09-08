@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.selectotp.SelectOtpActivity"
+    android:layout_margin="24dp"
+    android:orientation="vertical"
+    android:layout_gravity="center_vertical"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload bukti pembayaran"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginTop="24dp"/>
+    <LinearLayout
+        android:id="@+id/ll_camera"
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/text_outline"
+        android:gravity="center"
+        >
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_camera"/>
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/img_payment"
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:visibility="gone"/>
+<View
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"/>
+    <Button
+        android:id="@+id/btn_upload_payment"
+        android:layout_marginTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="upload bukti"
+        android:background="@drawable/btn"
+        android:textColor="@android:color/white"/>
+</LinearLayout>

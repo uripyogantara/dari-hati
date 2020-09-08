@@ -19,4 +19,18 @@ class FundingPresenter(private val service: ApiService,private val view: Funding
                     view.onErrorFunding(it)
                 })
     }
+
+    fun getFundingPayment():Disposable{
+        view.showLoadingFunding()
+        return service.fundingByMember()
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe({
+                    view.hideLoadingFunding()
+                    view.onSuccessFunding(it)
+                },{
+                    view.hideLoadingFunding()
+                    view.onErrorFunding(it)
+                })
+    }
 }

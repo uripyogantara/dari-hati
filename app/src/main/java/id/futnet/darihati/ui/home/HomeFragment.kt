@@ -16,6 +16,7 @@ import id.futnet.darihati.ui.community.CommunityActivity
 import id.futnet.darihati.ui.detailcommunity.DetailCommunityActivity
 import id.futnet.darihati.ui.detailfunding.DetailFundingActivity
 import id.futnet.darihati.ui.funding.FundingActivity
+import id.futnet.darihati.ui.payment.PaymentActivity
 import id.futnet.darihati.ui.student.StudentActivity
 import id.futnet.darihati.utils.gone
 import id.futnet.darihati.utils.visible
@@ -57,6 +58,7 @@ class HomeFragment : Fragment(), HomeView, View.OnClickListener {
         menu_student.setOnClickListener(this)
         menu_community.setOnClickListener(this)
         menu_funding.setOnClickListener(this)
+        menu_payment.setOnClickListener(this)
     }
 
     private fun setCommunityAdapater(){
@@ -84,7 +86,7 @@ class HomeFragment : Fragment(), HomeView, View.OnClickListener {
                 startActivity<FundingActivity>()
             }
             R.id.menu_payment->{
-
+                startActivity<PaymentActivity>()
             }
         }
     }

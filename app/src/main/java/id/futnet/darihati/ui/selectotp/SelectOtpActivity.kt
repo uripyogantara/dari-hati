@@ -36,7 +36,7 @@ class SelectOtpActivity : AppCompatActivity() {
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe({
                         dialog.hide()
-                        startActivity<InputOtpActivity>()
+                        startActivity<InputOtpActivity>("type" to "sms")
                         finish()
                     },{
                         dialog.hide()
@@ -52,7 +52,7 @@ class SelectOtpActivity : AppCompatActivity() {
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe({
-                        startActivity<InputOtpActivity>()
+                        startActivity<InputOtpActivity>("type" to "email")
                         finish()
                     },{
                         dialog.hide()

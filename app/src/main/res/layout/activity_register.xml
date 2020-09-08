@@ -11,9 +11,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="24dp"
         android:layout_marginBottom="8dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -26,51 +26,110 @@
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
             android:src="@drawable/logo"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Nama"
+            android:textColor="#444444"/>
         <EditText
             android:id="@+id/et_nama"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Nama"
-            android:inputType="text"/>
+            android:hint="Masukkan nama"
+            android:inputType="text"
+            android:background="@drawable/et"
+            android:padding="12dp"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Telepon"
+            android:textColor="#444444"/>
 
         <EditText
-            android:inputType="number"
+            android:inputType="phone"
             android:id="@+id/et_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Telepon" />
+            android:hint="Masukkan telepon"
+            android:background="@drawable/et"
+            android:padding="12dp"
+            android:layout_marginTop="4dp"/>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Email"
+            android:textColor="#444444"/>
         <EditText
             android:inputType="textEmailAddress"
             android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email" />
+            android:hint="Masukkan email"
+            android:background="@drawable/et"
+            android:padding="12dp"
+            android:layout_marginTop="4dp"/>
 
         <EditText
             android:inputType="number"
             android:id="@+id/et_identity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="No KTP." />
+            android:hint="No KTP."
+            android:background="@drawable/et"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"/>
 
         <EditText
             android:inputType="text"
             android:id="@+id/et_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Alamat" />
-
+            android:hint="Alamat"
+            android:background="@drawable/et"
+            android:padding="12dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Password"
+            android:textColor="#444444"/>
         <EditText
             android:inputType="textPassword"
             android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password" />
+            android:hint="Masukkan password"
+            android:background="@drawable/et"
+            android:padding="12dp"
+            android:layout_marginTop="4dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Ulangi Password"
+            android:textColor="#444444"/>
+        <EditText
+            android:inputType="textPassword"
+            android:id="@+id/et_password_retype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Masukkan password"
+            android:background="@drawable/et"
+            android:padding="12dp"
+            android:layout_marginTop="4dp"/>
 
         <Button
             android:id="@+id/btn_register"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="24dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Register"
